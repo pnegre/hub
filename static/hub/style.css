@@ -1,0 +1,65 @@
+
+a:link, a:visited, a:hover {
+	color: black;
+	text-decoration: none;
+}
+
+
+.clear {
+	clear: both;
+}
+
+body {
+	font-family: verdana, sans-serif;
+	font-size: 13px;
+}
+
+
+
+#tabs_top {
+	background-color: #CED1D8;
+	height: 27px;
+}
+
+#tabs_top a {
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+#tabs_top li:hover, #tabs_top li:hover a:link, #tabs_top li:hover a:visited, #tabs_top li:hover a:hover, .ui-tabs-selected a:hover, .ui-tabs-selected a:link, .ui-tabs-selected a:visited {
+	background-color: #A71717;
+	color: white;
+}
+
+#tabs_top li {
+	margin-right: 0px;
+}
+
+#tabs_top ul {
+	padding-top: 0px;
+	padding-left: 0px;
+}
+
+
+#tabs_top ul li {
+	border-right: 1px solid white;
+}
+
+#tabs_bottom {
+	background-color: #A71717;
+}
+
+#tabs_bottom div {
+	padding: 8px;
+	padding-left: 10px;
+}
+
+#tabs_bottom a:link, #tabs_bottom a:visited, #tabs_bottom a:hover {
+	color: white;
+	text-decoration: none;
+	padding-right: 15px;
+	padding-left: 15px;
+	border-right: 1px solid white;
+}
+
+	

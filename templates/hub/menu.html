@@ -1,0 +1,76 @@
+<html>
+
+<head>
+
+<link rel="stylesheet" type="text/css" media="all" href="/static/hub/jquery.ui.tabs.css">
+<link rel="stylesheet" type="text/css" media="all" href="/static/hub/style.css">
+
+<script type="text/javascript" src="/static/hub/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/static/hub/jquery-ui-1.8.19.custom.min.js"></script>
+<script type="text/javascript" src="/static/hub/jquery.cookie.js"></script>
+
+
+<script type="text/javascript">
+
+
+	$(document).ready(function(){
+		$('#tabs').tabs({ cookie: { expires: 30 } });
+	});
+
+</script>
+
+
+</head>
+
+<body style="margin: 0px; padding: 0px;">
+
+<div id="topmenu">
+
+<img src="/static/hub/logo.png" style="height: 60px;">
+
+<span style="float: right; padding: 8px;">
+	<a href="" target="_parent">{{ user }}</a> |
+	<a href="/auth/logout" target="_parent">Sortir</a>
+</span>
+
+<div id="tabs">
+
+	<div id="tabs_top">
+		<ul>
+			{% for m in menus %}
+				<li> <a href="#tabs-{{m.menu.id}}"> {{ m.menu.name }} </a></li>
+			{% endfor %}
+		</ul>
+	</div>
+
+	<div class="clear"></div>
+
+	<div id="tabs_bottom">
+
+		{% for m in menus %}
+			<div id="tabs-{{m.menu.id}}" class="tabpanel">
+			{% for s in m.subs %}
+					<a href="{{ s.link }}"
+					{% if s.extern %}
+						target="_blank">
+					{% else %}
+						target="_parent">
+					{% endif %}
+					{{ s.name }}
+					</a>
+			{% endfor %}
+
+			&nbsp
+			</div>
+		{% endfor %}
+
+	</div>
+
+
+</div> <!-- End tabs -->
+
+</div> <!-- End topmenu -->
+
+</body>
+
+</html>
