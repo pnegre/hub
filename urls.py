@@ -4,7 +4,7 @@ from django.conf.urls import patterns
 
 urlpatterns = patterns('',
 
-        (r'^$', 'hub.views.index'),
-        (r'^menu$', 'hub.views.menu'),
+    (r'^$', 'hub.views.index'),
+    (r'^menu$', 'hub.views.menu'),
 
 )
