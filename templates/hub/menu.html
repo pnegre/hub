@@ -14,7 +14,13 @@
 
 
 	$(document).ready(function(){
+
 		$('#tabs').tabs({ cookie: { expires: 30 } });
+
+		$('#logout').click(function() {
+			$('#formlogout').submit();
+		});
+
 	});
 
 </script>
@@ -29,8 +35,11 @@
 <img src="/static/hub/logo.png" style="height: 60px;">
 
 <span style="float: right; padding: 8px;">
-	<a href="" target="_parent">{{ user }}</a> |
-	<a href="/auth/logout" target="_parent">Sortir</a>
+	<form id="formlogout" target="_parent" action="/auth/logout/" method="post">
+		{% csrf_token %}
+	 {{ user }}  |
+	<a id="logout" href="#">Sortir</a>
+	</form>
 </span>
 
 <div id="tabs">
